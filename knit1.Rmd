@@ -1,0 +1,46 @@
+---
+title: "RMarkdown"
+author: "JP"
+date: "23 de septiembre de 2016"
+output: html_document
+---
+
+**negrita**  
+__negrita__  
+*italica*  
+_italica_  
+~~tachado~~  
+
+* item a
+* item b
+
+* negrita con asteriscos dobles
+* italica con guiones bajos
+* código con comillas hacia atrás (backticks)
+
+1. negrita con asteriscos dobles
+1. italica con guiones bajos
+1. código con comillas hacia atrás (backticks)
+
+# Título
+## Sección principal
+### Sub-sección
+#### Sub-sub sección
+
+```{r load_data, echo=FALSE}
+knitr::opts_chunk$set(fig.path="Figs/", 
+                      message=FALSE, 
+                      warning=FALSE,
+                      echo=FALSE, 
+                      results="hide", 
+                      fig.width=4, fig.height = 3)
+
+library(ggplot2)
+gapminder <- read.csv("E:/Curso R/sep20/DATA/gapminder-FiveYearData.csv")
+ggplot(gapminder, aes(lifeExp, pop)) +
+         geom_point()
+
+```
+
+
+# Algun texto `r round(algun_valor, 2)` algo mas
